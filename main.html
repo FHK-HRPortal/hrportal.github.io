@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Utama</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+  <div class="main-container">
+    <h2>Halaman Utama</h2>
+    <div class="menu-list">
+      <a href="e-learning.html" class="menu-item">E-Learning</a>
+      <a href="golden-rules.html" class="menu-item">Golden Rules</a>
+      <a href="#" class="menu-item">PP Hotel Fave Karawang</a>
+      <a href="#" class="menu-item">Favesite</a>
+      <a href="#" class="menu-item">Arch Value</a>
+      <a href="#" class="menu-item">SOP / Job Desk</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+  
+</body>
+</html>

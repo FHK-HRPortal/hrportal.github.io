@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Rules</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="main-container">
+    <h2>Golden Rules</h2>
+    <div class="menu-list">
+      <div class="menu-item" data-department="HRD">Human Resources</div>
+      <div class="menu-item" data-department="Finance">Finance Accounting</div>
+      <div class="menu-item" data-department="FB Service">FB Service</div>
+      <div class="menu-item" data-department="FB Product">FB Product</div>
+      <div class="menu-item" data-department="Front Office">Front Office</div>
+      <div class="menu-item" data-department="Housekeeping">Housekeeping</div>
+      <div class="menu-item" data-department="Engineering">Engineering</div>
+      <div class="menu-item" data-department="Sales">Sales & Marketing</div>
+      <div class="menu-item" data-department="IT">Information Technology</div>
+    </div>
+
+    <!-- Tombol Back dan Logout -->
+    <div class="button-container">
+      <button class="back-button" onclick="window.location.href='main.html'">Back</button>
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content-container">
+      <img id="modalImage" class="modal-content" src="" alt="Golden Rules Image">
+      <button id="continueButton" onclick="openGoogleDrive()">Lihat Google Drive</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const logoutButton = document.getElementById("logoutButton");
+      if (logoutButton) {
+        logoutButton.addEventListener("click", function() {
+          logout();
+        });
+      }
+    });
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+</body>
+</html>

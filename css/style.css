@@ -1,0 +1,300 @@
+/* Warna dasar Favehotel dengan magenta */
+:root {
+  --primary-magenta: #ab326a; /* Warna magenta */
+  --secondary-gray: #f4f4f4; /* Warna abu-abu terang */
+  --text-dark: #333; /* Warna teks gelap */
+  --white: #ffffff; /* Warna putih */
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-gray);
+}
+
+/* Atur main-container dan login-container untuk berada di atas */
+.main-container, .login-container {
+  width: 90%; /* Menggunakan 90% dari lebar layar pada perangkat mobile */
+  max-width: 400px;
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 20px auto; /* Beri sedikit margin atas untuk menyesuaikan posisi */
+}
+
+.login-container {
+  text-align: center;
+}
+
+.login-image {
+  width: 90%; /* Sesuaikan ukuran gambar untuk memenuhi layar mobile */
+  max-width: 250px; /* Atur batas maksimal gambar agar tidak terlalu besar */
+  margin-bottom: 20px; /* Tambahkan jarak antara gambar dan form login */
+  border-radius: 8px;
+}
+
+/* Styling logo di halaman login */
+.login-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+/* Styling label dan input */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Menata container password dan ikon mata */
+.password-container {
+  position: relative;
+  width: 100%; /* Sesuaikan dengan lebar yang diinginkan */
+}
+
+/* Menata input password */
+#password {
+  width: 100%;
+  padding: 10px 40px 10px 10px; /* Menambahkan padding pada bagian kanan untuk ruang ikon */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Menata ikon mata */
+.toggle-password {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+/* Mengubah warna ikon mata saat hover */
+.toggle-password:hover {
+  color: #333;
+}
+
+
+
+/* CSS untuk pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  background-color: rgba(0, 0, 0, 0.8); /* Latar belakang hitam transparan */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2em;
+  z-index: 1000;
+}
+
+.popup.active {
+  display: block;
+}
+
+
+/* Responsif untuk mobile */
+@media (max-width: 600px) {
+  .popup {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .popup h2 {
+    font-size: 1.3em;
+  }
+
+  .popup p {
+    font-size: 0.9em;
+  }
+
+  .popup .close-btn {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+}
+
+
+
+
+/* Tombol utama dengan warna magenta */
+button, .menu-item {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(--primary-magenta);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+button:hover, .menu-item:hover {
+  background-color: #cc00cc; /* Warna magenta lebih gelap saat hover */
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px; /* Memberikan jarak antara menu dan tombol */
+}
+
+/* Styling untuk tombol Back dan Logout */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-button, .logout-button {
+  width: 48%; /* Mengatur lebar agar tombol sejajar */
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Warna tombol Back */
+.back-button {
+  background-color: #4CAF50; /* Warna hijau untuk tombol Back */
+  color: var(--white);
+  border: none; /* Menghilangkan border */
+  padding: 10px; /* Pastikan padding cukup untuk tombol terlihat */
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #45a049; /* Hijau lebih gelap saat hover */
+}
+
+/* Warna tombol Logout */
+.logout-button {
+  background-color: #d32f2f; /* Warna merah untuk Logout */
+  color: var(--white);
+}
+
+.logout-button:hover {
+  background-color: #b71c1c; /* Merah lebih gelap saat hover */
+}
+
+.menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  background-color: var(--primary-magenta);
+  color: var(--white);
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Pesan error di halaman login */
+#error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Styling modal untuk gambar layar penuh */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto 15px 15px; /* margin kiri untuk menggeser sedikit ke kanan */
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Tombol Drive */
+#continueButton {
+  background-color: rgba(155, 17, 17, 0.568); /* Membuat tombol transparan */
+  color: white;
+  border: none;
+  padding: 15px 0; /* Memberikan padding untuk menambah tinggi tombol */
+  width: 80%; /* Membuat tombol mengikuti lebar gambar */
+  max-width: 500px; /* Menambahkan batas maksimal lebar tombol */
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0 auto 15px 35px; /* Memberikan jarak antara tombol dan gambar */
+  transition: background-color 0.3s;
+}
+
+#continueButton:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Menambahkan efek hover untuk tombol */
+}
+
+#continueButton:focus {
+  outline: none; /* Menghilangkan outline saat tombol difokuskan */}

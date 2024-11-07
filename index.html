@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <div class="login-container">
+    <img src="images/login-image.png" alt="Login Image" class="login-image">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username (Department)</label>
+      <input type="text" id="username" required>
+      
+      <label for="password">Password</label>
+      <div class="password-container">
+        <input type="password" id="password" required>
+        <span id="togglePassword" class="toggle-password"><i class="fas fa-eye-slash"></i></span>
+      </div>
+      
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <p id="error-message"></p>
+  </div>
+
+  <div id="loginPopup" class="popup">
+    <p>Anda sukses login.</p>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(function(error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+  
+</body>
+</html>
